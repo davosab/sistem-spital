@@ -1,9 +1,9 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
-import Patients from '../components/Patients.vue'
-import Invoices from '../components/Invoices.vue'
-import Inventory from '../components/Inventory.vue'
-import Appointments from '../components/Appointments.vue'
-import Wards from '../components/Wards.vue'
+import Patients from '../pages/Patients.vue'
+import Invoices from '../pages/Invoices.vue'
+import Inventory from '../pages/Inventory.vue'
+import Appointments from '../pages/Appointments.vue'
+import Wards from '../pages/Wards.vue'
 
 
 const routes = [
