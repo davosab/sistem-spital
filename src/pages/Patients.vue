@@ -1,17 +1,15 @@
 <script setup>
-import PatientsCard from '../components/patients-page/PatientsCard.vue';
+import PatientsCard from "../components/patients-page/PatientsCard.vue";
+import Button from "../components/Button.vue";
 </script>
-<template> 
-<div class="ml-[200px] h-full" >
+<template>
+  <div class="ml-[200px] h-full">
     <div class="flex justify-self-end">
-        <button class=" mr-[50px] mt-[25px] text-[16px] font-semibold px-[15px] py-[10px] bg-[#56D788] rounded-[10px]"> Add new patient </button>
+      <Button text="Add new patient" />
     </div>
 
     <div class="w-full h-full">
-        <PatientsCard />
+      <PatientsCard />
     </div>
-</div>
-
-
-
+  </div>
 </template>
