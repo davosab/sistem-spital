@@ -5,7 +5,7 @@ import Button from "../components/Button.vue";
 <template>
   <div class="ml-[200px] h-full">
     <div class="flex justify-self-end">
-      <Button text="Add new patient" />
+      <Button text="New Patient" />
     </div>
 
     <div class="w-full h-full">
