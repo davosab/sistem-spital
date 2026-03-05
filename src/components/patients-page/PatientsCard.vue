@@ -33,9 +33,11 @@ onMounted(() => {
                 <p class="text-[16px] font-semibold">Status</p>
             </div>
             <ul>
+                <li>-testing-</li>
                 <li v-for="patient in patients" :key="patient.id">
                     {{ patient.first_name }}
                 </li>
+                <li>-testing-</li>
             </ul>
         </div>
     </div>
