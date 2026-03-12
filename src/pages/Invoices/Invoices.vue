@@ -1,6 +1,6 @@
 <script setup>
-import Button from '../components/Button.vue';
-import InvoicesCard from '../components/invoices-page/InvoicesCard.vue';
+import Button from '../../components/Button.vue';
+import InvoicesCard from '../../components/invoices-page/InvoicesCard.vue';
 </script>
 <template> 
     <div class="ml-[200px] h-full" >
