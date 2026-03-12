@@ -1,6 +1,6 @@
 <script setup>
-import PatientsCard from "../components/patients-page/PatientsCard.vue";
-import Button from "../components/Button.vue";
+import PatientsCard from "../../components/patients-page/PatientsCard.vue";
+import Button from "../../components/Button.vue";
 </script>
 <template>
   <div class="ml-[200px] h-full">

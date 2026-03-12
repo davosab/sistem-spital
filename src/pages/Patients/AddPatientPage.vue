@@ -1,9 +1,6 @@
 <script setup>
-import Button from "../components/Button.vue";
-import FormInput from "../components/FormInput.vue";
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-import { supabase } from "../lib/supabaseClient.js";
+import Button from '../components/Button.vue';
+import FormInput from '../components/FormInput.vue';
 </script>
 
 <template>
