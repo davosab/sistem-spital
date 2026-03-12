@@ -1,4 +1,4 @@
-<template>
+<template>  
     <div id="patients-card" class="w-[full] bg-white mx-[30px] mb-[30px] rounded-[10px]">
         <h1 class="text-[18px] font-semibold mt-3">
             Appointments
@@ -31,7 +31,6 @@
                 <p class="text-[16px] font-semibold">
                     Created at
                 </p>
-
             </div>
         </div>
     </div>
