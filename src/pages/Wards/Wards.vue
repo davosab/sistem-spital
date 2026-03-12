@@ -1,6 +1,6 @@
 <script setup>
-import Button from '../components/Button.vue';
-import WardsCard from '../components/wards-page/WardsCard.vue';
+import Button from '../../components/Button.vue';
+import WardsCard from '../../components/wards-page/WardsCard.vue';
 </script>
 <template>
     <div class="ml-[200px] h-full">
