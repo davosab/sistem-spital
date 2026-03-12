@@ -34,6 +34,8 @@ onMounted(() => {
         <p class="text-[16px] font-semibold">Alert at</p>
         <p class="text-[16px] font-semibold">Supplier</p>
         <p class="text-[16px] font-semibold">Updated</p>
+        <p class="text-[16px] font-semibold">Edit</p>
+        <p class="text-[16px] font-semibold">Delete</p>
       </div>
       <ul>
         <li
@@ -51,6 +53,16 @@ onMounted(() => {
           <p class="text-[14px]">
             {{ new Date(item.updated_at).toLocaleDateString() }}
           </p>
+           <button
+            class="mr-[10px] bg-[#56D788] hover:bg-[#2cba62] text-[12px] font-medium px-2 py-1 rounded-md transition-colors duration-200"
+          >
+            Edit
+          </button>
+          <button
+            class="ml-[10px] bg-red-500 hover:bg-red-600 text-white text-[12px] font-medium px-3 py-1 rounded-md transition-colors duration-200"
+          >
+            Delete
+          </button>
         </li>
       </ul>
     </div>

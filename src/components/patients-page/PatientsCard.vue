@@ -50,12 +50,12 @@ onMounted(() => {
           <p class="text-[14px]">{{ patient.gender }}</p>
           <p class="text-[14px]">{{ patient.status }}</p>
           <button
-            class="bg-blue-500 hover:bg-blue-600 text-white text-[12px] font-medium px-3 py-1 rounded-md transition-colors duration-200"
+            class="mr-[10px] bg-[#56D788] hover:bg-[#2cba62] text-[12px] font-medium px-2 py-1 rounded-md transition-colors duration-200"
           >
             Edit
           </button>
           <button
-            class="bg-red-500 hover:bg-red-600 text-white text-[12px] font-medium px-3 py-1 rounded-md transition-colors duration-200"
+            class="ml-[10px] bg-red-500 hover:bg-red-600 text-white text-[12px] font-medium px-3 py-1 rounded-md transition-colors duration-200"
           >
             Delete
           </button>
