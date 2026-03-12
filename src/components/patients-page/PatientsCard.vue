@@ -33,15 +33,33 @@ onMounted(() => {
         <p class="text-[16px] font-semibold">Date of Birth</p>
         <p class="text-[16px] font-semibold">Gender</p>
         <p class="text-[16px] font-semibold">Status</p>
+        <p class="text-[16px] font-semibold">Edit</p>
+        <p class="text-[16px] font-semibold">Delete</p>
       </div>
       <ul>
-        <!-- get data from the database (patients array)
-                 
-                <li v-for="patient in patients" :key="patient.id">
-                    {{ patient.first_name }}
-                </li>
-
-                -->
+        <li
+          v-for="(patient, index) in patients"
+          :key="patient.id"
+          class="grid grid-cols-9 border-b border-gray-200 p-3 text-center items-center hover:bg-gray-50"
+        >
+          <p class="text-[14px]">{{ index + 1 }}</p>
+          <p class="text-[14px]">{{ patient.first_name }}</p>
+          <p class="text-[14px]">{{ patient.last_name }}</p>
+          <p class="text-[14px]">{{ patient.cnp }}</p>
+          <p class="text-[14px]">{{ patient.date_of_birth }}</p>
+          <p class="text-[14px]">{{ patient.gender }}</p>
+          <p class="text-[14px]">{{ patient.status }}</p>
+          <button
+            class="bg-blue-500 hover:bg-blue-600 text-white text-[12px] font-medium px-3 py-1 rounded-md transition-colors duration-200"
+          >
+            Edit
+          </button>
+          <button
+            class="bg-red-500 hover:bg-red-600 text-white text-[12px] font-medium px-3 py-1 rounded-md transition-colors duration-200"
+          >
+            Delete
+          </button>
+        </li>
       </ul>
     </div>
   </div>
