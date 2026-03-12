@@ -33,6 +33,8 @@ onMounted(() => {
         <p class="text-[16px] font-semibold">Date of Birth</p>
         <p class="text-[16px] font-semibold">Gender</p>
         <p class="text-[16px] font-semibold">Status</p>
+        <p class="text-[16px] font-semibold">Edit</p>
+        <p class="text-[16px] font-semibold">Delete</p>
       </div>
       <ul>
         <li
@@ -47,6 +49,16 @@ onMounted(() => {
           <p class="text-[14px]">{{ patient.date_of_birth }}</p>
           <p class="text-[14px]">{{ patient.gender }}</p>
           <p class="text-[14px]">{{ patient.status }}</p>
+          <button
+            class="bg-blue-500 hover:bg-blue-600 text-white text-[12px] font-medium px-3 py-1 rounded-md transition-colors duration-200"
+          >
+            Edit
+          </button>
+          <button
+            class="bg-red-500 hover:bg-red-600 text-white text-[12px] font-medium px-3 py-1 rounded-md transition-colors duration-200"
+          >
+            Delete
+          </button>
         </li>
       </ul>
     </div>
