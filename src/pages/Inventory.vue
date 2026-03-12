@@ -1,6 +1,6 @@
 <script setup>
-import Button from "../../components/Button.vue";
-import InventoryCard from "../../components/inventory-page/InventoryCard.vue";
+import Button from "../components/Button.vue";
+import InventoryCard from "../components/inventory-page/InventoryCard.vue";
 // import
 </script>
 
