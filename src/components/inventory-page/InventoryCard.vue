@@ -24,7 +24,7 @@ onMounted(() => {
 
     <div class="grid grid-cols-1 mt-2 max-h-[800px] overflow-y-auto">
       <div
-        class="grid grid-cols-9 border-b border-t border-gray-300 p-3 text-center items-center"
+        class="grid grid-cols-10 border-b border-t border-gray-300 p-3 text-center items-center"
       >
         <p class="text-[16px] font-semibold">ID</p>
         <p class="text-[16px] font-semibold">Name</p>
@@ -36,13 +36,22 @@ onMounted(() => {
         <p class="text-[16px] font-semibold">Updated</p>
       </div>
       <ul>
-        <!-- get data from the database (inventory array)
-                 
-                <li v-for="item in inventory" :key="item.id">
-                    {{ item.id }}
-                </li>
-
-                -->
+        <li
+          v-for="(item, index) in inventory"
+          :key="item.id"
+          class="grid grid-cols-10 border-b border-gray-200 p-3 text-center items-center hover:bg-gray-50"
+        >
+          <p class="text-[14px]">{{ index + 1 }}</p>
+          <p class="text-[14px]">{{ item.name }}</p>
+          <p class="text-[14px]">{{ item.category }}</p>
+          <p class="text-[14px]">{{ item.quantity }}</p>
+          <p class="text-[14px]">{{ item.unit }}</p>
+          <p class="text-[14px]">{{ item.low_stock_threshold }}</p>
+          <p class="text-[14px]">{{ item.supplier }}</p>
+          <p class="text-[14px]">
+            {{ new Date(item.updated_at).toLocaleDateString() }}
+          </p>
+        </li>
       </ul>
     </div>
   </div>
