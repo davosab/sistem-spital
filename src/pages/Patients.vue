@@ -5,7 +5,10 @@ import Button from "../components/Button.vue";
 <template>
   <div class="ml-[200px] h-full">
     <div class="flex justify-self-end">
+      <router-link 
+        to="/addPatient">
       <Button text="New Patient" />
+      </router-link>
     </div>
 
     <div class="w-full h-full">
@@ -13,3 +16,4 @@ import Button from "../components/Button.vue";
     </div>
   </div>
 </template>
+
