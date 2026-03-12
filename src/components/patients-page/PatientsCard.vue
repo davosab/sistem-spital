@@ -35,13 +35,19 @@ onMounted(() => {
         <p class="text-[16px] font-semibold">Status</p>
       </div>
       <ul>
-        <!-- get data from the database (patients array)
-                 
-                <li v-for="patient in patients" :key="patient.id">
-                    {{ patient.first_name }}
-                </li>
-
-                -->
+        <li
+          v-for="(patient, index) in patients"
+          :key="patient.id"
+          class="grid grid-cols-9 border-b border-gray-200 p-3 text-center items-center hover:bg-gray-50"
+        >
+          <p class="text-[14px]">{{ index + 1 }}</p>
+          <p class="text-[14px]">{{ patient.first_name }}</p>
+          <p class="text-[14px]">{{ patient.last_name }}</p>
+          <p class="text-[14px]">{{ patient.cnp }}</p>
+          <p class="text-[14px]">{{ patient.date_of_birth }}</p>
+          <p class="text-[14px]">{{ patient.gender }}</p>
+          <p class="text-[14px]">{{ patient.status }}</p>
+        </li>
       </ul>
     </div>
   </div>
