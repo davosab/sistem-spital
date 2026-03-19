@@ -84,6 +84,7 @@ async function handleSubmit() {
 
                     <router-link to="/inventory">
                         <button
+                            type="button"
                             class="mr-[50px] mt-[25px] text-[16px] font-semibold px-[15px] py-[10px] bg-[#ff4444] rounded-[10px] hover:bg-[#ff3333] cursor-pointer"
                         >
                             Cancel
