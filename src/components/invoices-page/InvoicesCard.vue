@@ -32,7 +32,7 @@ onMounted(() => {
     >
         <h1 class="text-[18px] font-semibold mt-3">Invoices</h1>
 
-        <div class="grid grid-cols-1 mt-2 max-h-[800px] overflow-y-auto">
+        <div class="grid grid-cols-1 mt-2 max-h-[700px] overflow-y-auto">
             <div
                 class="grid grid-cols-8 border-b border-t border-gray-300 p-3 text-center items-center"
             >
