@@ -46,9 +46,9 @@ async function handleSubmit() {
                 @submit.prevent="handleSubmit"
                 class="w-full flex justify-center items-center flex-col"
             >
-                <ReadInput model="appointmentId" labelText="ID" />
-                <ReadInput model="patientId" labelText="Patient ID" />
-                <ReadInput model="doctorId" labelText="Doctor ID" />
+                <ReadInput v-model="appointmentId" labelText="ID" />
+                <ReadInput v-model="patientId" labelText="Patient ID" />
+                <ReadInput v-model="doctorId" labelText="Doctor ID" />
                 <FormInput
                     v-model="scheduledAt"
                     inputType="date"
