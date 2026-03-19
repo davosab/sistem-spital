@@ -1,21 +1,64 @@
 <script setup>
-import Button from '../../components/Button.vue';
-import FormInput from '../../components/FormInput.vue';
-import ReadInput from '../../components/ReadInput.vue';
+import Button from "../../components/Button.vue";
+import FormInput from "../../components/FormInput.vue";
+import ReadInput from "../../components/ReadInput.vue";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { supabase } from "../../lib/supabaseClient.js";
+
+const router = useRouter();
+
+const scheduledAt = ref("");
+const status = ref("Admitted");
+const reminderSent = ref("");
+const createdAt = ref("");
+const errorMessage = ref("");
+const loading = ref(false);
+
+async function handleSubmit() {
+    errorMessage.value = "";
+    loading.value = true;
+
+    const { error } = await supabase.from("appointments").insert({
+        scheduled_at: scheduledAt.value,
+        status: status.value,
+        reminder_sent: reminderSent.value,
+        created_at: createdAt.value,
+    });
+
+    loading.value = false;
+
+    if (error) {
+        errorMessage.value = error.message;
+    } else {
+        router.push("/appointments");
+    }
+}
 </script>
 
 <template>
     <div class="ml-[200px]">
-        <h1 class="text-center text-[22px] font-medium pt-[100px]">Add new Appointment</h1>
+        <h1 class="text-center text-[22px] font-medium pt-[100px]">
+            Add new Appointment
+        </h1>
         <div>
-            <form submit.prevent class="w-full flex justify-center items-center flex-col">
+            <form
+                submit.prevent
+                class="w-full flex justify-center items-center flex-col"
+            >
                 <ReadInput model="appointmentId" labelText="ID" />
                 <ReadInput model="patientId" labelText="Patient ID" />
                 <ReadInput model="doctorId" labelText="Doctor ID" />
-                <FormInput model="scheduledAt" inputType="date" labelText="Scheduled At" />
+                <FormInput
+                    model="scheduledAt"
+                    inputType="date"
+                    labelText="Scheduled At"
+                />
                 <div class="flex flex-col">
                     <labeL>Status</labeL>
-                    <select class="w-[600px] h-[30px] border-1 rounded-md border-gray-400">
+                    <select
+                        class="w-[600px] h-[30px] border-1 rounded-md border-gray-400"
+                    >
                         <option>Scheduled</option>
                         <option>Completed</option>
                         <option>Canceled</option>
@@ -24,31 +67,33 @@ import ReadInput from '../../components/ReadInput.vue';
 
                 <div class="flex flex-col">
                     <labeL>Reminder Sent</labeL>
-                    <select class="w-[600px] h-[30px] border-1 rounded-md border-gray-400">
+                    <select
+                        class="w-[600px] h-[30px] border-1 rounded-md border-gray-400"
+                    >
                         <option>Yes</option>
                         <option>No</option>
                     </select>
                 </div>
 
-                <FormInput model="createdAt" inputType="date" labelText="Created At" />
-                
+                <FormInput
+                    model="createdAt"
+                    inputType="date"
+                    labelText="Created At"
+                />
 
                 <div>
                     <router-link to="/appointments">
-                    <Button text="Add new Appointment" />
+                        <Button text="Add new Appointment" />
                     </router-link>
                     <router-link to="/appointments">
                         <button
-                            class="mr-[50px] mt-[25px] text-[16px] font-semibold px-[15px] py-[10px] bg-[#ff4444] rounded-[10px] hover:bg-[#ff3333] cursor-pointer">
+                            class="mr-[50px] mt-[25px] text-[16px] font-semibold px-[15px] py-[10px] bg-[#ff4444] rounded-[10px] hover:bg-[#ff3333] cursor-pointer"
+                        >
                             Cancel
                         </button>
                     </router-link>
-
                 </div>
-
-
             </form>
-
         </div>
     </div>
 </template>
