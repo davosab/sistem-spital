@@ -10,6 +10,10 @@ import EditAppointmentPage from '../pages/Appointments/EditAppointment.vue'
 import AddInventoryPage from '../pages/Inventory/AddInventoryPage.vue'
 import EditInventoryPage from '../pages/Inventory/EditInventoryPage.vue'
 import EditPatientPage from '../pages/Patients/EditPatientPage.vue'
+import AddInvoicePage from '../pages/Invoices/AddInvoicePage.vue'
+import EditInvoicePage from '../pages/Invoices/EditInvoicePage.vue'
+import AddWardPage from '../pages/Wards/AddWardPage.vue'
+import EditWardPage from '../pages/Wards/EditWardPage.vue'
 
 const routes = [
     {path:'/', redirect:'/patients'},
@@ -23,7 +27,12 @@ const routes = [
     {path:'/addAppointment', name:'addAppointment', component: AddAppointmentPage},
     {path:'/editAppointment', name:'editAppointment', component: EditAppointmentPage},
     {path:'/addInventory', name:'addInventory', component: AddInventoryPage},
-    {path:'/editInventory', name:'editInventory', component: EditInventoryPage}
+    {path:'/editInventory', name:'editInventory', component: EditInventoryPage},
+    {path:'/addInvoice', name:'addInvoice', component: AddInvoicePage},
+    {path:'/editInvoice', name:'editInvoice', component: EditInvoicePage},
+    {path:'/addWard', name:'addWard', component: AddWardPage},
+    {path:'/editWard', name:'editWard', component: EditWardPage},
+    
 
 
 
