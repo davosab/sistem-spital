@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { supabase } from "/src/lib/supabaseClient";
+import router from "../../router/router";
 
 // array that will contain objects with database records
 const patients = ref([]);
@@ -52,18 +53,21 @@ onMounted(() => {
           :key="patient.id"
           class="grid grid-cols-9 border-b border-gray-200 p-3 text-center items-center hover:bg-gray-50"
         >
-          <p class="text-[14px]">{{ patient.id }}</p>
+          <p class="text-[14px]">{{ index + 1 }}</p>
           <p class="text-[14px]">{{ patient.first_name }}</p>
           <p class="text-[14px]">{{ patient.last_name }}</p>
           <p class="text-[14px]">{{ patient.cnp }}</p>
           <p class="text-[14px]">{{ patient.date_of_birth }}</p>
           <p class="text-[14px]">{{ patient.gender }}</p>
           <p class="text-[14px]">{{ patient.status }}</p>
-          <button
-            class="mr-[10px] bg-[#56D788] hover:bg-[#2cba62] text-[12px] font-medium px-2 py-1 rounded-md transition-colors duration-200"
-          >
-            Edit
-          </button>
+
+          <router-link to="/editPatient">
+            <button
+              class="mr-[10px] bg-[#56D788] hover:bg-[#2cba62] text-[12px] font-medium px-2 py-1 rounded-md transition-colors duration-200"
+            >
+              Edit
+            </button>
+          </router-link>
           <button
             @click="deletePatient(patient.id)"
             class="ml-[10px] bg-red-500 hover:bg-red-600 text-white text-[12px] font-medium px-3 py-1 rounded-md transition-colors duration-200"
