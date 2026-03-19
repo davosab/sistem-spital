@@ -6,6 +6,9 @@ import Appointments from '../pages/Appointments/Appointments.vue'
 import Wards from '../pages/Wards/Wards.vue'
 import AddPatientPage from '../pages/Patients/AddPatientPage.vue'
 import AddAppointmentPage from '../pages/Appointments/AddAppointmentPage.vue'
+import EditAppointmentPage from '../pages/Appointments/EditAppointment.vue'
+import AddInventoryPage from '../pages/Inventory/AddInventoryPage.vue'
+import EditInventoryPage from '../pages/Inventory/EditInventoryPage.vue'
 
 
 const routes = [
@@ -17,6 +20,11 @@ const routes = [
     {path:'/wards', name:'wards', component: Wards},
     {path:'/addPatient', name:'addPatient', component: AddPatientPage},
     {path:'/addAppointment', name:'addAppointment', component: AddAppointmentPage},
+    {path:'/editAppointment', name:'editAppointment', component: EditAppointmentPage},
+    {path:'/addInventory', name:'addInventory', component: AddInventoryPage},
+    {path:'/editInventory', name:'editInventory', component: EditInventoryPage}
+
+
 
 ]
 

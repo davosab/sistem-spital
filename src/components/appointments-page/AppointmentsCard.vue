@@ -1,9 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { supabase } from "/src/lib/supabaseClient";
-
-import { Pencil } from 'lucide-vue-next'
-
 // array that will contain objects with database records
 const appointments = ref([]);
 
@@ -72,11 +69,14 @@ onMounted(() => {
           <p class="text-[14px]">
             {{ new Date(appointment.created_at).toLocaleDateString() }}
           </p>
+
+          <router-link to="/editAppointment">
           <button
             class="mr-[10px] bg-[#56D788] hover:bg-[#2cba62] text-[12px] font-medium px-2 py-1 rounded-md transition-colors duration-200"
           >
             Edit
           </button>
+        </router-link>
           <button
             class="ml-[10px] bg-red-500 hover:bg-red-600 text-white text-[12px] font-medium px-3 py-1 rounded-md transition-colors duration-200"
           >
