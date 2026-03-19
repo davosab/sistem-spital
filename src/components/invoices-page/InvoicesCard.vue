@@ -62,18 +62,21 @@ onMounted(() => {
                         {{ new Date(invoice.paid_at).toLocaleDateString() }}
                     </p>
                     <div class="flex justify-center">
-                    <router-link to="/editInvoice">
-                    <button
-                        class="bg-[#56D788] hover:bg-[#2cba62] text-[12px] font-medium py-1 rounded-md transition-colors duration-200 w-[70px]">
-                        Edit
-                    </button>
-                    </router-link>
+                        <router-link to="/editInvoice">
+                            <button
+                                class="bg-[#56D788] hover:bg-[#2cba62] text-[12px] font-medium py-1 rounded-md transition-colors duration-200 w-[70px]"
+                            >
+                                Edit
+                            </button>
+                        </router-link>
                     </div>
                     <div class="flex justify-center">
-                    <button
-                        class="bg-red-500 hover:bg-red-600 text-white text-[12px] font-medium py-1 rounded-md transition-colors duration-200 w-[70px]">
-                        Delete
-                    </button>
+                        <button
+                            @click="deleteInvoice(invoice.id)"
+                            class="bg-red-500 hover:bg-red-600 text-white text-[12px] font-medium py-1 rounded-md transition-colors duration-200 w-[70px]"
+                        >
+                            Delete
+                        </button>
                     </div>
                 </li>
             </ul>
