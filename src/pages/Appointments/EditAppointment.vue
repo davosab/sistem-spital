@@ -22,6 +22,11 @@ import ReadInput from '../../components/ReadInput.vue';
                     </select>
                 </div>
 
+                  <FormInput
+                    v-model="notes"
+                    labelText="Notes"
+                />
+
                 <div class="flex flex-col">
                     <labeL>Reminder Sent</labeL>
                     <select class="w-[600px] h-[30px] border-1 rounded-md border-gray-400">

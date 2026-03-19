@@ -34,7 +34,7 @@ onMounted(() => {
     >
         <h1 class="text-[18px] font-semibold mt-3">Inventory</h1>
 
-        <div class="grid grid-cols-1 mt-2 max-h-[800px] overflow-y-auto">
+        <div class="grid grid-cols-1 mt-2 max-h-[700px] overflow-y-auto">
             <div
                 class="grid grid-cols-10 border-b border-t border-gray-300 p-3 text-center items-center"
             >
@@ -65,19 +65,23 @@ onMounted(() => {
                     <p class="text-[14px]">
                         {{ new Date(item.updated_at).toLocaleDateString() }}
                     </p>
+                    <div class="flex justify-center">
                     <router-link to="/editInventory">
                         <button
-                            class="mr-[10px] bg-[#56D788] hover:bg-[#2cba62] text-[12px] font-medium px-2 py-1 rounded-md transition-colors duration-200"
+                            class="bg-[#56D788] hover:bg-[#2cba62] text-[12px] font-medium py-1 rounded-md transition-colors duration-200 w-[70px]"
                         >
                             Edit
                         </button>
                     </router-link>
+                    </div>
+                    <div class="flex justify-center">
                     <button
                         @click="deleteInventory(item.id)"
-                        class="ml-[10px] bg-red-500 hover:bg-red-600 text-white text-[12px] font-medium px-3 py-1 rounded-md transition-colors duration-200"
+                        class="bg-red-500 hover:bg-red-600 text-white text-[12px] py-1 font-medium rounded-md transition-colors duration-200 w-[70px]"
                     >
                         Delete
                     </button>
+                    </div>
                 </li>
             </ul>
         </div>
