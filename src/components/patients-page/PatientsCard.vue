@@ -53,7 +53,7 @@ onMounted(() => {
           :key="patient.id"
           class="grid grid-cols-9 border-b border-gray-200 p-3 text-center items-center hover:bg-gray-50"
         >
-          <p class="text-[14px]">{{ index + 1 }}</p>
+          <p class="text-[14px]">{{ patient.id }}</p>
           <p class="text-[14px]">{{ patient.first_name }}</p>
           <p class="text-[14px]">{{ patient.last_name }}</p>
           <p class="text-[14px]">{{ patient.cnp }}</p>
