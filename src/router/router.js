@@ -9,7 +9,7 @@ import AddAppointmentPage from '../pages/Appointments/AddAppointmentPage.vue'
 import EditAppointmentPage from '../pages/Appointments/EditAppointment.vue'
 import AddInventoryPage from '../pages/Inventory/AddInventoryPage.vue'
 import EditInventoryPage from '../pages/Inventory/EditInventoryPage.vue'
-
+import EditPatientPage from '../pages/Patients/EditPatientPage.vue'
 
 const routes = [
     {path:'/', redirect:'/patients'},
@@ -19,10 +19,12 @@ const routes = [
     {path:'/appointments', name:'appointments', component: Appointments},
     {path:'/wards', name:'wards', component: Wards},
     {path:'/addPatient', name:'addPatient', component: AddPatientPage},
+    {path:'/editPatient', name:'editPatient', component: EditPatientPage},
     {path:'/addAppointment', name:'addAppointment', component: AddAppointmentPage},
     {path:'/editAppointment', name:'editAppointment', component: EditAppointmentPage},
     {path:'/addInventory', name:'addInventory', component: AddInventoryPage},
     {path:'/editInventory', name:'editInventory', component: EditInventoryPage}
+
 
 
 
