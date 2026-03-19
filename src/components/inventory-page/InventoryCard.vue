@@ -65,11 +65,13 @@ onMounted(() => {
                     <p class="text-[14px]">
                         {{ new Date(item.updated_at).toLocaleDateString() }}
                     </p>
-                    <button
-                        class="mr-[10px] bg-[#56D788] hover:bg-[#2cba62] text-[12px] font-medium px-2 py-1 rounded-md transition-colors duration-200"
-                    >
-                        Edit
-                    </button>
+                    <router-link to="/editInventory">
+                        <button
+                            class="mr-[10px] bg-[#56D788] hover:bg-[#2cba62] text-[12px] font-medium px-2 py-1 rounded-md transition-colors duration-200"
+                        >
+                            Edit
+                        </button>
+                    </router-link>
                     <button
                         @click="deleteInventory(item.id)"
                         class="ml-[10px] bg-red-500 hover:bg-red-600 text-white text-[12px] font-medium px-3 py-1 rounded-md transition-colors duration-200"
@@ -79,51 +81,5 @@ onMounted(() => {
                 </li>
             </ul>
         </div>
-    </div>
-    <div class="grid grid-cols-1 mt-2 max-h-[800px] overflow-y-auto">
-        <div
-            class="grid grid-cols-10 border-b border-t border-gray-300 p-3 text-center items-center"
-        >
-            <p class="text-[16px] font-semibold">ID</p>
-            <p class="text-[16px] font-semibold">Name</p>
-            <p class="text-[16px] font-semibold">Category</p>
-            <p class="text-[16px] font-semibold">Quantity</p>
-            <p class="text-[16px] font-semibold">Unit</p>
-            <p class="text-[16px] font-semibold">Alert at</p>
-            <p class="text-[16px] font-semibold">Supplier</p>
-            <p class="text-[16px] font-semibold">Updated</p>
-            <p class="text-[16px] font-semibold">Edit</p>
-            <p class="text-[16px] font-semibold">Delete</p>
-        </div>
-        <ul>
-            <li
-                v-for="(item, index) in inventory"
-                :key="item.id"
-                class="grid grid-cols-10 border-b border-gray-200 p-3 text-center items-center hover:bg-gray-50"
-            >
-                <p class="text-[14px]">{{ index + 1 }}</p>
-                <p class="text-[14px]">{{ item.name }}</p>
-                <p class="text-[14px]">{{ item.category }}</p>
-                <p class="text-[14px]">{{ item.quantity }}</p>
-                <p class="text-[14px]">{{ item.unit }}</p>
-                <p class="text-[14px]">{{ item.low_stock_threshold }}</p>
-                <p class="text-[14px]">{{ item.supplier }}</p>
-                <p class="text-[14px]">
-                    {{ new Date(item.updated_at).toLocaleDateString() }}
-                </p>
-                <router-link to="/editInventory">
-                    <button
-                        class="mr-[10px] bg-[#56D788] hover:bg-[#2cba62] text-[12px] font-medium px-2 py-1 rounded-md transition-colors duration-200"
-                    >
-                        Edit
-                    </button>
-                </router-link>
-                <button
-                    class="ml-[10px] bg-red-500 hover:bg-red-600 text-white text-[12px] font-medium px-3 py-1 rounded-md transition-colors duration-200"
-                >
-                    Delete
-                </button>
-            </li>
-        </ul>
     </div>
 </template>
