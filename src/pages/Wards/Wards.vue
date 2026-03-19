@@ -5,7 +5,9 @@ import WardsCard from '../../components/wards-page/WardsCard.vue';
 <template>
     <div class="ml-[200px] h-full">
     <div class="flex justify-self-end">
+    <router-link to="/addWard">
       <Button text="New Ward" />
+    </router-link>
     </div>
 
     <div class="w-full h-full">

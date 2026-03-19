@@ -6,7 +6,7 @@ import ReadInput from '../../components/ReadInput.vue';
 
 <template>
     <div class="ml-[200px]">
-        <h1 class="text-center text-[22px] font-medium pt-[100px]">Add new Inventory</h1>
+        <h1 class="text-center text-[22px] font-medium pt-[100px]">Add new Item</h1>
         <div>
             <form submit.prevent class="w-full flex justify-center items-center flex-col">
                 <ReadInput model="inventoryId" labelText="ID" />
