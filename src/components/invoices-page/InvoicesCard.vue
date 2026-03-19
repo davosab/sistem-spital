@@ -61,7 +61,7 @@ onMounted(() => {
                     <p class="text-[14px]">
                         {{ new Date(invoice.paid_at).toLocaleDateString() }}
                     </p>
-                    <router-link to="/editInvoices">
+                    <router-link to="/editInvoice">
                         <button
                             class="mr-[10px] bg-[#56D788] hover:bg-[#2cba62] text-[12px] font-medium px-2 py-1 rounded-md transition-colors duration-200"
                         >
