@@ -1,9 +1,28 @@
 <script setup>
+import { useRoute } from 'vue-router';
 import { Users } from "lucide-vue-next";
 import { ClipboardClock } from "lucide-vue-next";
 import { ShelvingUnit } from "lucide-vue-next";
 import { Receipt } from "lucide-vue-next";
 import { Hospital } from "lucide-vue-next";
+
+const route = useRoute();
+
+// Determine if a nav item should be active based on current route
+const isActive = (mainPath) => {
+  const currentPath = route.path;
+  
+  // Check if exact match or if edit/add variant of the same category
+  if (currentPath === mainPath) return true;
+  
+  if (mainPath === '/patients' && (currentPath === '/editPatient' || currentPath === '/addPatient')) return true;
+  if (mainPath === '/appointments' && (currentPath === '/editAppointment' || currentPath === '/addAppointment')) return true;
+  if (mainPath === '/inventory' && (currentPath === '/editInventory' || currentPath === '/addInventory')) return true;
+  if (mainPath === '/invoices' && (currentPath === '/editInvoice' || currentPath === '/addInvoice')) return true;
+  if (mainPath === '/wards' && (currentPath === '/editWard' || currentPath === '/addWard')) return true;
+  
+  return false;
+};
 </script>
 
 <template>
@@ -11,27 +30,27 @@ import { Hospital } from "lucide-vue-next";
     <div class="flex flex-col flex-1 justify-between mt-[25px]">
       <ul class="flex flex-col gap-3">
         <li>
-          <router-link to="/patients" class="li" active-class="active">
+          <router-link to="/patients" class="li" :class="{ active: isActive('/patients') }">
             <Users class="icon" /> Patients
           </router-link>
         </li>
         <li>
-          <router-link to="/appointments" class="li" active-class="active">
+          <router-link to="/appointments" class="li" :class="{ active: isActive('/appointments') }">
             <ClipboardClock class="icon" /> Appointments
           </router-link>
         </li>
         <li>
-          <router-link to="/inventory" class="li" active-class="active">
+          <router-link to="/inventory" class="li" :class="{ active: isActive('/inventory') }">
             <ShelvingUnit class="icon" /> Inventory
           </router-link>
         </li>
         <li>
-          <router-link to="/invoices" class="li" active-class="active">
+          <router-link to="/invoices" class="li" :class="{ active: isActive('/invoices') }">
             <Receipt class="icon" /> Invoices
           </router-link>
         </li>
         <li>
-          <router-link to="/wards" class="li" active-class="active">
+          <router-link to="/wards" class="li" :class="{ active: isActive('/wards') }">
             <Hospital class="icon" /> Wards
           </router-link>
         </li>
