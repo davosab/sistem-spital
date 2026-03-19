@@ -1,9 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { supabase } from "/src/lib/supabaseClient";
-
-import { Pencil } from "lucide-vue-next";
-
 // array that will contain objects with database records
 const appointments = ref([]);
 
