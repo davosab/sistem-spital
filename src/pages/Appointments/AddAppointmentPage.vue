@@ -66,6 +66,11 @@ async function handleSubmit() {
                     </select>
                 </div>
 
+                 <FormInput
+                    v-model="notes"
+                    labelText="Notes"
+                />
+
                 <div class="flex flex-col">
                     <label>Reminder Sent</label>
                     <select
