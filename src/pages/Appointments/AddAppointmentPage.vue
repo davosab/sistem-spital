@@ -9,7 +9,7 @@ import { supabase } from "../../lib/supabaseClient.js";
 const router = useRouter();
 
 const scheduledAt = ref("");
-const status = ref("Admitted");
+const status = ref("");
 const reminderSent = ref("");
 const createdAt = ref("");
 const errorMessage = ref("");
@@ -43,50 +43,60 @@ async function handleSubmit() {
         </h1>
         <div>
             <form
-                submit.prevent
+                @submit.prevent="handleSubmit"
                 class="w-full flex justify-center items-center flex-col"
             >
                 <ReadInput model="appointmentId" labelText="ID" />
                 <ReadInput model="patientId" labelText="Patient ID" />
                 <ReadInput model="doctorId" labelText="Doctor ID" />
                 <FormInput
-                    model="scheduledAt"
+                    v-model="scheduledAt"
                     inputType="date"
                     labelText="Scheduled At"
                 />
                 <div class="flex flex-col">
-                    <labeL>Status</labeL>
+                    <label>Status</label>
                     <select
+                        v-model="status"
                         class="w-[600px] h-[30px] border-1 rounded-md border-gray-400"
                     >
-                        <option>Scheduled</option>
-                        <option>Completed</option>
-                        <option>Canceled</option>
+                        <option>scheduled</option>
+                        <option>completed</option>
+                        <option>cancelled</option>
                     </select>
                 </div>
 
                 <div class="flex flex-col">
-                    <labeL>Reminder Sent</labeL>
+                    <label>Reminder Sent</label>
                     <select
+                        v-model="reminderSent"
                         class="w-[600px] h-[30px] border-1 rounded-md border-gray-400"
                     >
-                        <option>Yes</option>
-                        <option>No</option>
+                        <option>TRUE</option>
+                        <option>FALSE</option>
                     </select>
                 </div>
 
                 <FormInput
-                    model="createdAt"
+                    v-model="createdAt"
                     inputType="date"
                     labelText="Created At"
                 />
 
+                <p v-if="errorMessage" class="text-red-500 text-sm mt-2">
+                    {{ errorMessage }}
+                </p>
+
                 <div>
-                    <router-link to="/appointments">
-                        <Button text="Add new Appointment" />
-                    </router-link>
+                    <Button
+                        type="submit"
+                        :disabled="loading"
+                        :text="loading ? 'Saving...' : 'Add new Appointment'"
+                    />
+
                     <router-link to="/appointments">
                         <button
+                            type="button"
                             class="mr-[50px] mt-[25px] text-[16px] font-semibold px-[15px] py-[10px] bg-[#ff4444] rounded-[10px] hover:bg-[#ff3333] cursor-pointer"
                         >
                             Cancel
